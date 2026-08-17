@@ -1,0 +1,15 @@
+<?php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Volunteer extends Model
+{
+    protected $fillable = ['name', 'volunteer_num', 'email'];
+
+    public function assignments(): HasMany
+    {
+        return $this->hasMany(Assignment::class);
+    }
+}
